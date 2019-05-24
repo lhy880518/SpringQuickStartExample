@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class LoginController implements Controller {
-    @Override
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) {
         System.out.println("로그인 처리");
 
@@ -25,9 +24,9 @@ public class LoginController implements Controller {
 
         ModelAndView mav = new ModelAndView();
         if(user != null){
-            mav.setViewName("getBoardList.do");
+            mav.setViewName("redirect:getBoardList.do");
         }else{
-            mav.setViewName("login.jsp");
+            mav.setViewName("redirect:login.jsp");
         }
         return mav;
     }

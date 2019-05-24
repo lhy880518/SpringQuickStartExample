@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 public class InsertBoardController implements Controller {
-    @Override
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) {
         System.out.println("글 등록 처리");
 
@@ -27,7 +26,7 @@ public class InsertBoardController implements Controller {
         boardDAO.insertBoard(vo);
 
         ModelAndView mav = new ModelAndView();
-        mav.setViewName("getBoardList.do");
+        mav.setViewName("redirect:getBoardList.do");
         return mav;
     }
 }

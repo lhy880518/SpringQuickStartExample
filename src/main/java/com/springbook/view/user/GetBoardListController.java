@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 
 public class GetBoardListController implements Controller {
-    @Override
+
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) {
         System.out.println("글 목록 검색 처리");
 
@@ -23,7 +23,8 @@ public class GetBoardListController implements Controller {
         session.setAttribute("boardList", boardList);
 
         ModelAndView mav = new ModelAndView();
-        mav.setViewName("getBoardList.do");
+        mav.addObject("boardList", boardList);
+        mav.setViewName("getBoardList");
         return mav;
     }
 }

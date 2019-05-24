@@ -1,4 +1,4 @@
-# annotationBoardBusiness
+# SpringQuickStartExample
 
 ## 프레임워크를 쓰는이유
 * 프레임워크는 아키텍처와 골격코드를 제공한다.

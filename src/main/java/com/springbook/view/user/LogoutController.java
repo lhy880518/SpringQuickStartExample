@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 public class LogoutController implements Controller {
-    @Override
-    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) {
+
+    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
         System.out.println("로그아웃 처리");
 
         HttpSession session = request.getSession();
@@ -19,7 +19,7 @@ public class LogoutController implements Controller {
         session.invalidate();
 
         ModelAndView mav = new ModelAndView();
-        mav.setViewName("login.do");
+        mav.setViewName("redirect:login.jsp");
         return mav;
     }
 }

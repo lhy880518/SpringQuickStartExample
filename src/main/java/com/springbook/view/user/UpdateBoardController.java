@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class UpdateBoardController implements Controller {
-    @Override
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) {
         System.out.println("글 수정 처리");
 
@@ -26,7 +25,7 @@ public class UpdateBoardController implements Controller {
         boardDAO.updateBoard(vo);
 
         ModelAndView mav = new ModelAndView();
-        mav.setViewName("getBoardList.do");
+        mav.setViewName("redirect:getBoardList.do");
         return mav;
     }
 }

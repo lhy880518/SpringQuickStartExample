@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 public class DeleteBoardController implements Controller {
-    @Override
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) {
         System.out.println("로그아웃 처리");
 
@@ -23,7 +22,7 @@ public class DeleteBoardController implements Controller {
         boardDAO.deleteBoard(vo);
 
         ModelAndView mav = new ModelAndView();
-        mav.setViewName("getBoardList.do");
+        mav.setViewName("redirect:getBoardList.do");
         return mav;
     }
 }
