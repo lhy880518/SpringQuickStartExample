@@ -98,3 +98,22 @@ public class LogAdvice {
 4. 로그인 처리 후에 이동할 화면 정보가 리턴되면
 5. DispatcherServlet은 ViewResolver를 통해 접두사와 접미사가 붙은 JSP 파일의 이름과 경로를 리턴 받는다
 6. 그리고 최종적으로 JSP를 실행하고 실행 결과가 브라우저에 응답된다.
+
+### Spring MVC를 이용한 개발(FEAT POJO)
+![스크린샷 2019-05-24 오후 6 01 38](https://user-images.githubusercontent.com/24884819/58316287-21bb9080-7e4e-11e9-81d9-100e0f2e5b05.png)
+* 3DAY 코드에서 4DAY코드로 가기까지 정말 간단한 변화지만 Spring FrameWork가 추구하는 방향과 이점에 대해 굉장히 의미깊은 수정이다.
+
+### web.xml을 이용한 Servlet 구축에 대해서 알아보자
+* [내용이 너무 방대하다 여기서 확인하자](https://gist.github.com/lhy880518/a24161251375e8b2a103ee1c131db284)
+
+### 스프링 컨테이너의 관계([그림출처](https://unordinarydays.tistory.com/121))
+![image](https://user-images.githubusercontent.com/24884819/58471888-e4257300-817f-11e9-8869-306d01bbe85f.png)
+
+
+1. web.xml파일을 로딩하여 서블릿 컨테이너 구동
+2. 서블릿 컨테이너는 web.xml파일에 등록된 ContextLoaderListener객체를 생성(Pre loading)
+이때 ContextLoaderListener 객체는 src/main/resources 소스 폴더에 있는 applicationContext.xml 파일을 로딩하여
+스프링 컨테이너를 구동하는데 이를 Root컨테이너 라고 한다.
+그리고 이때 Service 구현클래스나 DAO객체들이 메모리에 생성된다.
+3. DispatcherServlet객체는 /WEB-INF/config 폴더에 있는 presentation-layer.xml파일을 로딩하여 두번째 스프링 컨테이너를 구동한다.
+이 컨테이너가 Controller객체를 메모리에 생성한다.
