@@ -117,3 +117,7 @@ public class LogAdvice {
 그리고 이때 Service 구현클래스나 DAO객체들이 메모리에 생성된다.
 3. DispatcherServlet객체는 /WEB-INF/config 폴더에 있는 presentation-layer.xml파일을 로딩하여 두번째 스프링 컨테이너를 구동한다.
 이 컨테이너가 Controller객체를 메모리에 생성한다.
+
+### MYBATIS 프레임워크의 사용
+* Ibatis라는 이름으로 탄생하였으나 apache -> google로 넘어가면서 mybatis로 변경
+* 한두 줄의 자바코드로 DB연동을 처리, SQL명령어를 자바 코드에서 분리하여 XML 파일에 따로 관리한다는 것

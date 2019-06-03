@@ -8,7 +8,6 @@ import java.sql.SQLException;
 
 public class BoardRowMapper implements RowMapper<BoardVO> {
 
-    @Override
     public BoardVO mapRow(ResultSet rs, int rowNum) throws SQLException {
         BoardVO board = new BoardVO();
         board.setSeq(rs.getInt("SEQ"));
